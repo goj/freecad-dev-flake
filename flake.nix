@@ -19,11 +19,11 @@
 
       perSystem = { pkgs, ... }:
         let
-          basePackage = pkgs.freecad;
           freecad-pkg = "${nixpkgs}/pkgs/by-name/fr/freecad";
 
-          freecad = basePackage.overrideAttrs (oldAttrs: {
+          freecad-dev = pkgs.freecad.overrideAttrs (oldAttrs: {
             src = freecad-src;
+            pname = "freecad-dev";
 
             version = "dev-${freecad-src.shortRev or "dirty"}";
 
@@ -36,7 +36,7 @@
 
         in
         {
-          packages.default = freecad;
+          packages.default = freecad-dev;
         };
     };
 }
