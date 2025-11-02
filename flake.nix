@@ -20,10 +20,9 @@
       perSystem = { pkgs, ... }:
         let
           freecad-pkg = "${nixpkgs}/pkgs/by-name/fr/freecad";
-
-          freecad-dev = pkgs.freecad.overrideAttrs (oldAttrs: {
+      
+          freecad = pkgs.freecad.overrideAttrs (oldAttrs: {
             src = freecad-src;
-            pname = "freecad-dev";
 
             version = "dev-${freecad-src.shortRev or "dirty"}";
 
@@ -32,11 +31,31 @@
               "${freecad-pkg}/0002-FreeCad-OndselSolver-pkgconfig.patch"
             ];
             postPatch = "";
+
+          });
+          
+          # A version that can co-exist with the mainline FreeCAD
+          freecad-dev = freecad.overrideAttrs (oldAttrs: {
+            pname = "freecad-dev";
+            postInstall = (oldAttrs.postInstall or "") + ''
+              ln -s $out/bin/freecad $out/bin/freecad-dev
+
+              substituteInPlace $out/share/applications/org.freecad.FreeCAD.desktop \
+                --replace "Exec=FreeCAD" "Exec=freecad-dev"
+              substituteInPlace $out/share/applications/org.freecad.FreeCAD.desktop \
+                --replace "Name=FreeCAD" "Name=FreeCAD (dev)"
+
+              mv $out/share/applications/org.freecad.FreeCAD.desktop $out/share/applications/org.freecad.FreeCAD.dev.desktop
+            '';
           });
 
         in
         {
-          packages.default = freecad-dev;
+          packages = {
+            inherit freecad;
+            inherit freecad-dev;
+            default = freecad;
+          };
         };
     };
 }

@@ -2,7 +2,7 @@ name: "Build"
 on:
   push:
 jobs:
-  tests:
+  build:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
@@ -13,4 +13,4 @@ jobs:
       with:
         name: goj
         authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
-    - run: nix build
+    - run: nix build .#freecad .#freecad-dev
