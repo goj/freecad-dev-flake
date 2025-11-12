@@ -28,7 +28,6 @@
 
             patches = [
               "${freecad-pkg}/0001-NIXOS-don-t-ignore-PYTHONPATH.patch"
-              "${freecad-pkg}/0002-FreeCad-OndselSolver-pkgconfig.patch"
             ];
             postPatch = "";
 
