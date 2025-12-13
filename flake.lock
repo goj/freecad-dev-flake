@@ -5,11 +5,11 @@
         "nixpkgs-lib": "nixpkgs-lib"
       },
       "locked": {
-        "lastModified": 1762980239,
-        "narHash": "sha256-8oNVE8TrD19ulHinjaqONf9QWCKK+w4url56cdStMpM=",
+        "lastModified": 1765495779,
+        "narHash": "sha256-MhA7wmo/7uogLxiewwRRmIax70g6q1U/YemqTGoFHlM=",
         "owner": "hercules-ci",
         "repo": "flake-parts",
-        "rev": "52a2caecc898d0b46b2b905f058ccc5081f842da",
+        "rev": "5635c32d666a59ec9a55cab87e898889869f7b71",
         "type": "github"
       },
       "original": {
@@ -21,11 +21,11 @@
     "freecad-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1762972825,
-        "narHash": "sha256-fqypvfxGgbwNahTjxXvGobmOR/fXTzwiehB2m5OJMNc=",
+        "lastModified": 1765664639,
+        "narHash": "sha256-M7VrGt709aBp2Hw33Io/o+405bzjJG2IOGCSPii8t34=",
         "ref": "refs/heads/main",
-        "rev": "4b50d727699779aa0106707fe933e5e451b1e81f",
-        "revCount": 44223,
+        "rev": "bf697ca7105152131db0cc3e7d6acc1e7bd429b4",
+        "revCount": 44646,
         "submodules": true,
         "type": "git",
         "url": "https://github.com/FreeCAD/FreeCAD.git"
@@ -38,11 +38,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1762604901,
-        "narHash": "sha256-Pr2jpryIaQr9Yx8p6QssS03wqB6UifnnLr3HJw9veDw=",
+        "lastModified": 1765457389,
+        "narHash": "sha256-ddhDtNYvleZeYF7g7TRFSmuQuZh7HCgqstg5YBGwo5s=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "f6b44b2401525650256b977063dbcf830f762369",
+        "rev": "f997fa0f94fb1ce55bccb97f60d41412ae8fde4c",
         "type": "github"
       },
       "original": {
